@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>G-Map</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="./css/bootstrap.css" media="screen">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript"
+	src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+<script src="script.js"></script>
+</head>
+<body>
+	<center>
+		<h2>
+			<font color="white">Search for what your heart desires!</font>
+		</h2>
+	</center>
+	<div id="container" class="container">
+		<div id="gmap_canvas"></div>
+		<div class="actions">
+			<div class="btn btn-warning btn-md">
+				<label for="gmap_where">Location</label> <input id="gmap_where"
+					type="text" name="gmap_where" />
+			</div>
+			</br> </br> <span class='glyphicon glyphicon-map-marker'
+				style='color: #c09853;'></span>
+			<div id="button2" class="btn btn-warning btn-md"
+				onclick="find_location(); return false;">Search for address</div>
+			</br> </br>
+			<div class="btn btn-warning btn-md">
+				<label for="gmap_keyword">Keyword (optional):</label> <input
+					id="gmap_keyword" type="text" name="gmap_keyword" />
+			</div>
+			</br> </br>
+			<div class="btn btn-warning btn-md">
+				<label for="gmap_type">Type:</label> <select id="gmap_type">
+					<option value="atm">Atm</option>
+					<option value="bank">Bank</option>
+					<option value="food">Food</option>
+					<option value="bar">Bar</option>
+					<option value="cafe">Cafe</option>
+					<option value="hospital">Hospital</option>
+					<option value="police">Police</option>
+					<option value="store">Shopping</option>
+				</select>
+			</div>
+			<div class="btn btn-warning btn-md">
+				<label for="gmap_radius">Distance</label> <select id="gmap_radius">
+					<option value="500">500</option>
+					<option value="1000">1000</option>
+					<option value="1500">1500</option>
+					<option value="5000">5000</option>
+				</select>
+			</div>
+			<input type="hidden" id="lat" name="lat" value="40.7143528" /> <input
+				type="hidden" id="lng" name="lng" value="-74.0059731" /> </br> </br> <span
+				class='glyphicon glyphicon-search' style='color: #c09853;'></span>
+			<div id="button1" class="btn btn-warning btn-md"
+				onclick="find_places(); return false;">Search For Places</div>
+
+			<form action="index.php">
+				<span class='glyphicon glyphicon-home' style='color: #c09853;'></span>
+
+				<input type="submit" class="btn btn-warning btn-md"
+					value="Back to Home">
+			</form>
+
+		</div>
+	</div>
+	<
+</body>
+</html>

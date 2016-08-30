@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background: url(../img/vote_stats.png);
+	color: #000000;
+	font: 14px/1.3 Arial, sans-serif;
+}

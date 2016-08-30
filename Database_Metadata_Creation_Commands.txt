@@ -1,0 +1,44 @@
+CREATE TABLE IF NOT EXISTS `hashtags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hashtag` varchar(64) NOT NULL,
+  `review_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+); 
+
+CREATE TABLE IF NOT EXISTS `review` (
+  `body` varchar(720) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `lat` double NOT NULL DEFAULT '0' COMMENT 'Latitude',
+  `lng` double NOT NULL DEFAULT '0' COMMENT 'Longitude',
+  `users_id` int(10) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ;
+
+CREATE TABLE IF NOT EXISTS `follower` (
+  `follower_id` int(11) NOT NULL,
+  `users_id` int(10) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ;
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `username` varchar(256) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `password` varchar(32) NOT NULL,
+  `status` enum('active','inactive') NOT NULL DEFAULT 'active',
+  PRIMARY KEY (`id`) 
+) ;
+
+CREATE TABLE IF NOT EXISTS `spam` (
+  `vote_id` int(10) NOT NULL,
+  `user_id` int(10) NOT NULL   
+) ;
+
+CREATE TABLE IF NOT EXISTS `vote` (
+  `vote_id` int(10) NOT NULL,
+  `vote_count` int(10) NOT NULL,
+  `user_id` int(10) NOT NULL   
+) ;
+
